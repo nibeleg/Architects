@@ -112,3 +112,30 @@ if(isset($_GET["action"]))
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
+                <div class="col-md-4">
+				<form method="post" action="merchandise.php?action=add&id=<?php echo $row["id"]; ?>">
+					<div style="border:1px solid #333; background-color:#494949; border-radius:5px; padding:16px;" align="center">
+						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
+
+						<a href="product.php?id=<?php echo $row["id"]; ?>"><?php echo $row["name"]; ?></a>
+						
+            <h4 class="text-danger">€ <?php echo $row["price"]; ?></h4>
+            
+            <h4 class="text-danger"><?php echo $row["quantity"]; ?> τεμαχια</h4>
+
+						<input type="text" name="quantity" value="1" class="form-control" />
+
+						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+
+						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+
+						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Προσθήκη στο καλάθι" />
+
+					</div>
+        </form>
+        <br>
+			</div>
+			<?php
+					}
+				}
+      ?>
