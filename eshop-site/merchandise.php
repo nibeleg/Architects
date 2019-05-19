@@ -139,3 +139,51 @@ if(isset($_GET["action"]))
 					}
 				}
       ?>
+      <div style="clear:both"></div>
+			<br />
+			<h3>Πληροφορίες παραγγελίας</h3>
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<tr>
+						<th width="40%">Ονομασία προϊόντος</th>
+						<th width="10%">Ποσότητα</th>
+						<th width="20%">Τιμή</th>
+						<th width="15%">Σύνολο</th>
+						<th width="5%">Διαγραφή προϊόντος</th>
+					</tr>
+					<?php
+					if(!empty($_SESSION["shopping_cart"]))
+					{
+						$total = 0;
+						foreach($_SESSION["shopping_cart"] as $keys => $values)
+						{
+					?>
+					<tr>
+						<td><?php echo $values["item_name"]; ?></td>
+						<td><?php echo $values["item_quantity"]; ?></td>
+						<td>$ <?php echo $values["item_price"]; ?></td>
+						<td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
+						<td><a href="merchandise.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Διαγραφή</span></a></td>
+					</tr>
+					<?php
+							$total = $total + ($values["item_quantity"] * $values["item_price"]);
+						}
+					?>
+					<tr>
+						<td colspan="3" align="right">Σύνολο</td>
+						<td align="right">$ <?php echo number_format($total, 2); ?></td>
+						<td></td>
+					</tr>
+					<?php
+					}
+					?>
+						
+				</table>
+			</div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="index.html">Αρχική</a> | <a href="merchandise.html">Προϊόντα</a> | <a href="contact.html">Επικοινωνία</a></p>
+    </div>
+  </div>
+</body>
+</html>
