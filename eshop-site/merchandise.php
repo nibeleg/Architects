@@ -50,3 +50,65 @@ if(isset($_GET["action"]))
 		}
 	}
 }
+?>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>A R C H I T E C T S - Προϊόντα</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="index.html">Αρχική</a></li>
+          <li class="selected"><a href="merchandise.html">Προϊόντα</a></li>
+          <li><a href="contact.html">Επικοινωνία</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <!-- insert your sidebar items here -->
+            <h3>Τελευταία Νέα</h3>
+            <h4>Συναυλίες</h4>
+            <h5>Μάιος 21/22/23, 2019</h5>
+            <p>Η μπάντα μας θα βρεθεί στον Καναδά στις περιοχές Μόντρεαλ και Τορόντο<br />
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h3>Χρήσιμοι Σύνδεσμοι</h3>
+            <ul>
+              <li><a href="https://el-gr.facebook.com/architectsuk/" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/architects/?hl=el" target="_blank">Instagram</a></li>
+              <li><a href="https://twitter.com/architectsuk?lang=el" target="_blank">Twitter</a></li>
+			  <li><a href="https://www.youtube.com/channel/UCdp-kaIi7YO2WmNQ-LafmpA" target="_blank">YouTube</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <?php
+				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
+				$result = mysqli_query($connect, $query);
+				if(mysqli_num_rows($result) > 0)
+				{
+					while($row = mysqli_fetch_array($result))
+					{
+				?>
