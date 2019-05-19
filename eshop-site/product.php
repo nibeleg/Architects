@@ -152,3 +152,11 @@ if(isset($_GET["action"]))
 					?>
 						
 				</table>
+					</div>
+	<div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="index.html">Αρχική</a> | <a href="merchandise.php">Προϊόντα</a> | <a href="contact.html">Επικοινωνία</a></p>
+    </div>
+  </div>
+</body>
+</html>
