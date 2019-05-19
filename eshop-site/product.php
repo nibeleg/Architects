@@ -34,3 +34,21 @@ if(isset($_POST["add_to_cart"]))
 		$_SESSION["shopping_cart"][0] = $item_array;
 	}
 }
+
+if(isset($_GET["action"]))
+{
+	if($_GET["action"] == "delete")
+	{
+		foreach($_SESSION["shopping_cart"] as $keys => $values)
+		{
+			if($values["item_id"] == $_GET["id"])
+			{
+				unset($_SESSION["shopping_cart"][$keys]);
+				echo '<script>alert("Το προϊόν αφαιρέθηκε από το καλάθι")</script>';
+				echo '<script>window.location="merchandise.php"</script>';
+			}
+		}
+	}
+}
+
+?>
