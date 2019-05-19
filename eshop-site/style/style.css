@@ -86,3 +86,102 @@ ul li
 { display: block;
   text-align: center;
   margin: 20px auto;}
+
+#main, #menubar, #site_content, #footer
+{ margin-left: auto; 
+  margin-right: auto;}
+
+#header
+{ background: #1d1d1d url(architects_header.jpg) no-repeat;
+  border-bottom: 2px solid #ffffff;
+  height: 350px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 63%;}
+  
+#banner
+{ background: transparent url(banner.jpg) no-repeat;
+  width: 870px;
+  height: 180px;
+  margin-bottom: 20px;
+  border: 5px solid #ffffff;}
+
+#menubar
+{ width: 100%;
+  height: 50%;} 
+
+ul#menu
+{ float: center;
+  margin: 0;}
+
+ul#menu li
+{ float: left;
+  padding: 0 0 0 9px;
+  list-style: none;
+  margin: 1px 2px 0 0;
+  background: transparent;}
+
+ul#menu li a
+{ font: normal 100% 'trebuchet ms', sans-serif;
+  display: block; 
+  float: left; 
+  height: 20px;
+  padding: 6px 35px 5px 28px;
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
+  background: transparent;} 
+
+ul#menu li.selected a
+{ height: 20px;
+  padding: 6px 35px 5px 28px;}
+
+ul#menu li.selected
+{ margin: 1px 2px 0 0;
+  background: #ffffff;}
+
+ul#menu li.selected a, ul#menu li.selected a:hover
+{ background: #000000;
+  color: #FFF;}
+
+ul#menu li a:hover
+{ color: #FFF;
+  background: #404040;}
+
+#site_content
+{ width: 880px;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  padding: 0 0 10px 0;} 
+
+#sidebar_container
+{ float: right;
+  width: 224px;}
+
+.sidebar_top
+{ width: 222px;
+  height: 14px;
+  background: transparent url(side_top.png) no-repeat;}
+
+.sidebar_base
+{ width: 222px;
+  height: 14px;
+  background: url(side_base.png) no-repeat;}
+
+.sidebar
+{ float: right;
+  width: 222px;
+  padding: 0;
+  margin: 0 0 16px 0;}
+
+.sidebar_item
+{ background: url(side_back.png) repeat-y;
+  padding: 0 15px;
+  width: 192px;}
+
+.sidebar li a.selected
+{ color: #444;} 
+
+.sidebar ul
+{ margin: 0;}
