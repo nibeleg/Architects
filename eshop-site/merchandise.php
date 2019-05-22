@@ -65,9 +65,8 @@ if(isset($_GET["action"]))
     <div id="header">
       <div id="menubar">
         <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="index.html">Αρχική</a></li>
-          <li class="selected"><a href="merchandise.html">Προϊόντα</a></li>
+          <li class="selected"><a href="merchandise.php">Προϊόντα</a></li>
           <li><a href="contact.html">Επικοινωνία</a></li>
         </ul>
       </div>
@@ -180,7 +179,7 @@ if(isset($_GET["action"]))
 			</div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="index.html">Αρχική</a> | <a href="merchandise.html">Προϊόντα</a> | <a href="contact.html">Επικοινωνία</a></p>
+      <p><a href="index.html">Αρχική</a> | <a href="merchandise.php">Προϊόντα</a> | <a href="contact.html">Επικοινωνία</a></p>
     </div>
   </div>
 </body>
