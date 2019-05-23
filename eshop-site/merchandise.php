@@ -50,12 +50,27 @@ if(isset($_GET["action"]))
 		}
 	}
 }
+
+if(isset($_GET["action"]))
+{
+	if($_GET["action"] == "update")
+	{
+		foreach($_SESSION["shopping_cart"] as $keys => $values)
+		{
+				unset($_SESSION["shopping_cart"][$keys]);
+				header("Location: purchase.php?product_id=".$values["item_id"] . "&product_quantity=".$values["item_quantity"]);
+		}
+	}
+}
+
 ?>
 <!DOCTYPE HTML>
 <html>
 
 <head>
   <title>A R C H I T E C T S - Προϊόντα</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
@@ -65,6 +80,7 @@ if(isset($_GET["action"]))
     <div id="header">
       <div id="menubar">
         <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="index.html">Αρχική</a></li>
           <li class="selected"><a href="merchandise.php">Προϊόντα</a></li>
           <li><a href="contact.html">Επικοινωνία</a></li>
@@ -109,7 +125,7 @@ if(isset($_GET["action"]))
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
-                <div class="col-md-4">
+			<div class="col-md-4">
 				<form method="post" action="merchandise.php?action=add&id=<?php echo $row["id"]; ?>">
 					<div style="border:1px solid #333; background-color:#494949; border-radius:5px; padding:16px;" align="center">
 						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
@@ -120,13 +136,13 @@ if(isset($_GET["action"]))
             
             <h4 class="text-danger"><?php echo $row["quantity"]; ?> τεμαχια</h4>
 
-						<input type="text" name="quantity" value="1" class="form-control" />
+						<input type="text" name="quantity" value="1" class="form-control" /><br>
 
 						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 
 						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Προσθήκη στο καλάθι" />
+						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="button" value="Προσθήκη στο καλάθι" />
 
 					</div>
         </form>
@@ -176,6 +192,10 @@ if(isset($_GET["action"]))
 					?>
 						
 				</table>
+				<div style="text-align: center;">
+				<td><a href="merchandise.php?action=update&id=<?php echo $values["item_id"]; ?>&item_quantity=<?php echo $values["item_quantity"]; ?>"><span class="text-danger">Ολοκλήρωση παραγγελίας</span></a></td>
+				</div>
+				<br>
 			</div>
     <div id="content_footer"></div>
     <div id="footer">

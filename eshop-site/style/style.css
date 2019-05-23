@@ -57,21 +57,6 @@ a:hover
 { text-decoration: none;
   color: #ffffff;}
 
-blockquote
-{ margin: 20px 0; 
-  padding: 10px 20px 0 20px;
-  border: 1px solid #E5E5DB;
-  background: #FFF;}
-
-ul
-{ margin: 2px 0 22px 17px;}
-
-ul li
-{ list-style-type: circle;
-  margin: 0 0 6px 0; 
-  padding: 0 0 4px 5px;
-  line-height: 1.5em;}
-
 .left
 { float: left;
   width: auto;
@@ -107,14 +92,6 @@ ul li
   margin-bottom: 20px;
   border: 5px solid #ffffff;}
 
-#menubar
-{ width: 100%;
-  height: 50%;} 
-
-ul#menu
-{ float: center;
-  margin: 0;}
-
 ul#menu li
 { float: left;
   padding: 0 0 0 9px;
@@ -132,10 +109,6 @@ ul#menu li a
   color: #FFF;
   text-decoration: none;
   background: transparent;} 
-
-ul#menu li.selected a
-{ height: 20px;
-  padding: 6px 35px 5px 28px;}
 
 ul#menu li.selected
 { margin: 1px 2px 0 0;
@@ -183,18 +156,12 @@ ul#menu li a:hover
 .sidebar li a.selected
 { color: #444;} 
 
-.sidebar ul
-{ margin: 0;}
-
 #content
 { text-align: left;
   width: 620px;
   padding: 0 0 0 5px;
   float: left;}
   
-#content ul
-{ margin: 2px 0 22px 0px;}
-
 #content ul li, .sidebar ul li
 { list-style-type: none;
   background: url(bullet.png) no-repeat;
@@ -217,65 +184,6 @@ ul#menu li a:hover
 { line-height: 1.7em;
   padding: 0 0 10px 0;}
 
-#footer a
-{ color: #999999;
-  text-decoration: none;}
-
-#footer a:hover
-{ color: #FFF;
-  text-decoration: none;}
-
-.form_settings
-{ margin: 15px 0 0 0;}
-
-.form_settings p
-{ padding: 0 0 4px 0;}
-
-.form_settings span
-{ float: left; 
-  width: 200px; 
-  text-align: left;}
-  
-.form_settings input, .form_settings textarea
-{ padding: 5px; 
-  width: 299px; 
-  font: 100% arial; 
-  border: 1px solid #E5E5DB; 
-  background: #FFF; 
-  color: #47433F;}
-  
-.form_settings .submit
-{ font: 100% arial; 
-  border: 0; 
-  width: 99px; 
-  margin: 0 0 0 212px; 
-  height: 33px;
-  padding: 2px 0 3px 0;
-  cursor: pointer; 
-  background: #404040; 
-  color: #FFF;}
-
-.form_settings textarea, .form_settings select
-{ font: 100% arial; 
-  width: 299px;}
-
-.form_settings select
-{ width: 310px;}
-
-.form_settings .checkbox
-{ margin: 4px 0; 
-  padding: 0; 
-  width: 14px;
-  border: 0;
-  background: none;}
-
-.separator
-{ width: 100%;
-  height: 0;
-  border-top: 1px solid #D9D5CF;
-  border-bottom: 1px solid #FFF;
-  margin: 0 0 20px 0;}
-
 table
 { margin: 10px 0 30px 0;}
 
@@ -291,8 +199,8 @@ table tr td
   border-top: 1px solid #FFF;}
 
 input[type=text], input[type=password] {
-  width: 90%;
-  padding: 15px;
+  width: 5%;
+  padding: 5px;
   margin: 5px 0 22px 0;
   display: in-block;
   border: none;
@@ -304,28 +212,15 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
 button {
   background-color: #404040;
   color: white;
-  padding: 14px 20px;
+  padding: 15px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 20%;
   opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-.container {
-  padding: 16px;
 }
 
 .clearfix::after {
